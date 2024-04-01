@@ -12,7 +12,8 @@ function Header() {
         <span className="py-1 px-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white ">
           Ravi's
         </span>
-        <span className="text-white">Blog</span>
+        {/* <span className="text-white">Blog</span> */}
+        Blog
       </Link>
 
       <form>
@@ -57,6 +58,7 @@ function Header() {
         <Navbar.Link active={path === "/projects"} as={"div"}>
           <Link to="/projects">Projects</Link>
         </Navbar.Link>
+        
       </Navbar.Collapse>
     </Navbar>
   );
