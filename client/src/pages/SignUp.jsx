@@ -1,9 +1,31 @@
-import { Label, TextInput } from "flowbite-react";
-import React from "react";
+import { Label, TextInput, Button } from "flowbite-react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from 'flowbite-react'
 
 export default function SignUp() {
+  // State to store form data
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: ""
+  });
+
+  // On Change Handler
+  const changeHandler = (event) => {
+    const { id, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [id]: value
+    }));
+  };
+
+  // On Submit Handler
+  const submitHandler = (event) => {
+    event.preventDefault();
+    // Here you can submit the form data
+    console.log(formData);
+  };
+
   return (
     <div className="min-h-screen mt-20">
       <div className="flex p-4 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-10">
@@ -13,7 +35,6 @@ export default function SignUp() {
             <span className="py-1 px-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white ">
               BaaSBox
             </span>
-            {/* <span className="text-white">Blog</span> */}
             Tool
           </Link>
           <p className="mt-6 text-sm">
@@ -24,29 +45,32 @@ export default function SignUp() {
 
         {/* Right Side Form */}
         <div className="flex-1">
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4" onSubmit={submitHandler}>
             <div>
-              <Label className="font-bold m-2 text-sm" value="Username"/>
+              <Label className="font-bold m-2 text-sm" value="Username" />
               <TextInput
-               type="text"
-               placeholder="Username"
-               id='Username'
+                type="text"
+                placeholder="Username"
+                id='username'
+                onChange={changeHandler}
               />
             </div>
             <div>
-              <Label className="font-bold m-2 text-sm" value="Your Mail"/>
+              <Label className="font-bold m-2 text-sm" value="Your Mail" />
               <TextInput
-               type="email"
-               placeholder="example@gmail.com"
-               id='email'
+                type="email"
+                placeholder="example@gmail.com"
+                id='email'
+                onChange={changeHandler}
               />
             </div>
             <div>
-              <Label className="font-bold m-2 text-sm" value="Your Password"/>
+              <Label className="font-bold m-2 text-sm" value="Your Password" />
               <TextInput
-               type="text"
-               placeholder="Password"
-               id='Password'
+                type="password"
+                placeholder="Password"
+                id='password'
+                onChange={changeHandler}
               />
             </div>
 
