@@ -71,7 +71,7 @@ export default function FooterCom() {
               <Link to="/">
                 <li className="hover:text-red-600">About</li>
               </Link>
-              <Link to="/">
+              <Link to="/getStart">
                 <li className="hover:text-red-600">Pricing</li>
               </Link>
               <Link to="/">

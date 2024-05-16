@@ -1,10 +1,13 @@
 import { Label, TextInput, Button } from "flowbite-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import OAuth from "../components/OAuth";
+
 
 export default function SignIn() {
+
   return (
-    <div className="min-h-screen mt-20">
+    <div className="h-[600px] mt-20">
       <div className="flex p-4 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-10">
         {/* Left Side Content */}
         <div className="flex-1">
@@ -28,31 +31,33 @@ export default function SignIn() {
               <TextInput
                 type="email"
                 placeholder="example@gmail.com"
-                id='email'
+                id="email"
               />
             </div>
             <div>
               <Label className="font-bold m-2 text-sm" value="Your Password" />
-              <TextInput
-                type="password"
-                placeholder="Password"
-                id='password'
-              />
+              <TextInput type="password" placeholder="Password" id="password" />
             </div>
 
             {/*  Adding SignUp button Here */}
-            <Button gradientDuoTone='purpleToPink' type='submit'>
+            <Button gradientDuoTone="purpleToPink" type="submit">
               SignIn
             </Button>
+
+            <OAuth />
 
             {/* If Account Not Created Than SignIn */}
             <div className="flex gap-2 text-sm">
               <span>Don't Have account?</span>
-              <Link to='/sign-up' className="text-blue-400">Sign-up</Link>
+              <Link to="/sign-up" className="text-blue-400">
+                Sign-up
+              </Link>
             </div>
           </form>
         </div>
       </div>
+
+      
     </div>
   );
 }
