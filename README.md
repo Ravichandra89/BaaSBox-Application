@@ -87,5 +87,7 @@ To get started with BaaSBox, follow these steps:
 
 <img width="1710" alt="Screenshot 2024-05-27 at 7 47 00 AM" src="https://github.com/Ravichandra89/BaaSBox-Application/assets/134200599/19d40e6c-659b-4ee8-bf19-ee0c3f90cf13">
 
+## Creating the App and importing the Source Code from GitHub by Selecting the repository
+<img width="1710" alt="Screenshot 2024-06-26 at 8 49 11 PM" src="https://github.com/Ravichandra89/BaaSBox-Application/assets/134200599/7e795a3c-3565-41b0-8905-8373acec5a69">
 
 
