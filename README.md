@@ -32,6 +32,8 @@ In this phase, the code is built and deployed. The system converts React files i
 2. **Pull Deployments from SQS**: Retrieve deployment tasks from the Amazon SQS queue.
 3. **Deploy on EC2 Instances**: Automatically deploy the production build on Amazon EC2 instances. Utilize EC2 with Auto Scaling and AWS Fargate for efficient deployment and scaling.
 
+ <img width="925" alt="Screenshot 2024-07-28 at 5 28 32 PM" src="https://github.com/user-attachments/assets/7f97a7af-1d56-4324-b475-ebdcfbb3f9eb">
+
 ## 3. Request Phase
 
 In this phase, the system handles user requests based on their geographical location and serves the appropriate HTML, CSS, and JavaScript build files from AWS S3.
