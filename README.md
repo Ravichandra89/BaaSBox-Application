@@ -4,7 +4,7 @@
 
 BaaSBox is a Backend as a Service (BaaS) platform designed to simplify backend infrastructure management for developers. By integrating AWS resources like authentication, database management, and deployment pipelines, BaaSBox aims to streamline backend operations, enhancing developer productivity and accelerating application development. I am going to create a platform similar to Vercel, where users can deploy their MERN websites on AWS with S3 support in one click by providing their GitHub repository link.
 
-# Application Deployment System
+# Application Deployment System - System Design
 
 This document outlines the process of deploying and managing the application in three phases: GitHub Code Upload Phase, Deployment Phase, and Request Phase.
 
