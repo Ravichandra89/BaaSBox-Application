@@ -1,23 +1,21 @@
+import fs from "fs";
 import path from "path";
-import fs from "fs/promises";
 
-export const getAllFiles = async (folderPath: string): Promise<string[]> => {
+export const getAllFiles = (folderPath: string): string[] => {
   let response: string[] = [];
 
-  const allFilesAndFolders = await fs.readdir(folderPath);
-
-  for (const file of allFilesAndFolders) {
-    const fullFilePath = path.join(folderPath, file);
-    const fileStat = await fs.stat(fullFilePath);
-
-    if (fileStat.isDirectory()) {
-      // Iterate it's file Recursivly
-      const nestedFiles = await getAllFiles(fullFilePath);
-
-      response = response.concat(nestedFiles);
-    } else {
-      response.push(fullFilePath);
-    }
+  try {
+    const allFilesAndFolders = fs.readdirSync(folderPath);
+    allFilesAndFolders.forEach((file) => {
+      const fullFilePath = path.join(folderPath, file);
+      if (fs.statSync(fullFilePath).isDirectory()) {
+        response = response.concat(getAllFiles(fullFilePath));
+      } else {
+        response.push(fullFilePath);
+      }
+    });
+  } catch (error) {
+    console.error("Error reading directory:", error);
   }
 
   return response;

@@ -9,15 +9,19 @@ const s3 = new S3({
   endpoint: "https://e21220f4758c0870ba9c388712d42ef2.r2.cloudflarestorage.com",
 });
 
-export const upload = async (fileName: string, filePath: string) => {
+export const uploadFile = async (fileName: string, filePath: string) => {
   const fileContent = fs.readFileSync(filePath);
 
-  const response = await s3
-    .upload({
-      Body: fileContent,
-      Bucket: "vercel",
-      Key: fileName,
-    })
-    .promise();
-  console.log(response);
+  try {
+    const response = await s3
+      .upload({
+        Body: fileContent,
+        Bucket: "vercel",
+        Key: fileName,
+      })
+      .promise();
+    return response;
+  } catch (error) {
+    console.error("Error While Uploading on S3", error);
+  }
 };
