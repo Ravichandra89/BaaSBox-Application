@@ -10,14 +10,14 @@ In this phase, the system takes the link to the GitHub repository provided by th
 2. **Fetch Code**: Use the provided link to fetch the source code.
 3. **Store on AWS S3**: Save a copy of the source code on AWS S3 for backup.
 4. **Store Production Build on SQS**: Save the production build (HTML, CSS, JavaScript files) on the Amazon SQS service.
-<img width="1075" alt="Screenshot 2024-07-28 at 5 13 25 PM" src="https://github.com/user-attachments/assets/773fecad-a61e-4baf-943c-49f62c948a33">
+
 ## 2. Deployment Phase
 In this phase, the code is built and deployed. The system converts React files into browser-compatible files (HTML, CSS, JavaScript) and deploys them on Amazon EC2 instances. Deployment tasks are pulled from the Amazon SQS queue to automate the process.
 ### Steps:
 1. **Build Production Server**: Convert React files into browser-compatible files.
 2. **Pull Deployments from SQS**: Retrieve deployment tasks from the Amazon SQS queue.
 3. **Deploy on EC2 Instances**: Automatically deploy the production build on Amazon EC2 instances. Utilize EC2 with Auto Scaling and AWS Fargate for efficient deployment and scaling.
- <img width="925" alt="Screenshot 2024-07-28 at 5 28 32 PM" src="https://github.com/user-attachments/assets/7f97a7af-1d56-4324-b475-ebdcfbb3f9eb">
+
 ## 3. Request Phase
 In this phase, the system handles user requests based on their geographical location and serves the appropriate HTML, CSS, and JavaScript build files from AWS S3.
 ### Steps:
