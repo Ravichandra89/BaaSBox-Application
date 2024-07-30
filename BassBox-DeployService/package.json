@@ -1,0 +1,23 @@
+{
+  "name": "bassbox-deployservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "fs": "^0.0.1-security",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "aws": "^0.0.3-2",
+    "aws-sdk": "^2.1664.0",
+    "path": "^0.12.7",
+    "redis": "^4.6.15"
+  }
+}
