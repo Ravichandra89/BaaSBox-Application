@@ -1,0 +1,16 @@
+{
+  "name": "bassbox-requestphase",
+  "version": "1.0.0",
+  "description": "In this phase, the system handles user requests based on their geographical location and serves the appropriate HTML, CSS, and JavaScript build files from AWS S3. ### Steps: 1. **Receive User Request**: Get the request from the user, including their geographical location and user ID. 2. **Determine Geographical Area**: Identify the user's geographical area. 3. **Serve Build Files**: Serve the corresponding HTML, CSS, and JavaScript files from AWS S3 based on the user ID and geographical area.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
